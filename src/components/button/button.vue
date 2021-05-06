@@ -1,9 +1,8 @@
 <template>
     <component :is="tagName" :class="classes" :disabled="disabled" @click="handleClickLink" v-bind="tagProps">
         <Icon class="ti-load-loop" type="ios-loading" v-if="loading"></Icon>
-        <Icon :type="icon" :custom="customIcon" v-if="(icon || customIcon) && !loading"></Icon>
+        <Icon :type="icon" v-if="icon  && !loading"></Icon>
         <span v-if="showSlot" ref="slot"><slot></slot></span>
-        <div class="test">test</div>
     </component>
 </template>
 <script>

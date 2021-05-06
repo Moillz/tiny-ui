@@ -1,8 +1,10 @@
 <template>
     <i :class="classes" :style="styles" @click="handleClick"></i>
 </template>
+
+
 <script>
-    const prefixCls = 'ivu-icon';
+    const prefixCls = 'ti-icon';
 
     export default {
         name: 'Icon',
