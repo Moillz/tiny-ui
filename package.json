@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --config build/webpack.dev.config.js",
     "build": "webpack --mode development --config build/webpack.dev.config.js",
     "watch": "webpack --mode development --watch  --config build/webpack.dev.config.js",
-    "start": "webpack-dev-server --open --hot --config build/webpack.dev.config.js ",
-    "server": "node server.js"
+    "dev": "webpack-dev-server --open --hot --config build/webpack.dev.config.js ",
+    "server": "node server.js",
+    "build:icon": "node build/bin/iconInit.js",
+    "dist": "npm run build:icon && webpack --config build/webpack.conf.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/Moillz/easy-UI#readme",
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "vue": "^2.6.12"
   },
   "devDependencies": {

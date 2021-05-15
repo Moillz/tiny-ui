@@ -1,6 +1,11 @@
 <template>
     <div>
-        <Button type="primary">test</Button>
+         <Layout>
+        <Header>Header</Header>
+        <Content>Content</Content>
+        <Footer>Footer</Footer>
+    </Layout>
+
     </div>
 </template>
 <script>
