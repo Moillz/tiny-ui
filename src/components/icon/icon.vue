@@ -4,7 +4,7 @@
 
 
 <script>
-    const prefixCls = 'ti-icon';
+    const prefixCls = 'ivu-icon';
 
     export default {
         name: 'Icon',

@@ -16,6 +16,39 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          loaders: {
+            css: [
+                'vue-style-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: true
+                    }
+                }
+            ],
+            scss: [
+                'vue-style-loader',
+                {
+                  loader: 'style-loader',
+                  options: {
+                      sourceMap: true
+                  }
+              },
+               {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: true
+                }
+              },{
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
+            }
+            ]
+        },
+        }
       },
       {
         test: /\.js$/,
@@ -45,16 +78,16 @@ module.exports = {
           }
       ]
   },
+  {
+    test: /\.(scss|css)$/,
+    use: [
+      'style-loader',
+      'css-loader',
+      'sass-loader'
+    ]
+  },
       {
-        test: /\.scss/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+        test: /\.(gif|jpg|png|woff?|svg|eot|ttf)\??.*$/,
         loader: 'url-loader?limit=8192'
     },
     ]

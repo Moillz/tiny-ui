@@ -1,0 +1,10 @@
+@function tint($color, $per) {
+  @return mix($color, white, $per);
+}
+@function shade($color, $per) {
+  @return mix($color, black, $per);
+}
+
+@function fade($color, $alpha) {
+  @return rgba($color, $alpha);
+}
